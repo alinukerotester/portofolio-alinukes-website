@@ -1,6 +1,11 @@
 module.exports = {
+  future: {
+    webpack5: true, // Activează Webpack 5
+  },
   webpack: (config) => {
-    config.output.hashFunction = 'xxhash64'; // Înlocuiește algoritmul de hash
+    config.resolve.fallback = {
+      crypto: require.resolve('crypto-browserify'), // Oferă un fallback pentru 'crypto'
+    };
     return config;
   },
 };
