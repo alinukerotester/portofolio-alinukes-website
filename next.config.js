@@ -1,8 +1,6 @@
 module.exports = {
   webpack: (config) => {
-    config.resolve.fallback = {
-      crypto: false,
-    };
+    config.output.hashFunction = 'xxhash64'; // Înlocuiește algoritmul de hash
     return config;
   },
 };
